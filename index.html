@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Todo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <!-- INIZIO HEADER -->
+    <header>
+
+        <!-- inizio titolo -->
+        <div class="title">
+
+            <!-- logo -->
+            <img src="img/boolean_logo.png" alt="">
+
+            <h1>Todo List</h1>
+        </div>
+        <!-- fine titolo -->
+
+    </header>
+    <!-- FINE HEADER -->
+    
+    <!-- INIZIO MAIN -->
+    <main>
+
+        <!-- inizio vue js #root -->
+        <div id="root">
+
+            <!-- inizio contenitore root -->
+            <div class="container">
+
+                <!-- inizio aggiungi todo -->
+                <div class="agg_todo">
+                    <input v-model="todoInserito" @keyup.enter="aggiungiTodo" type="text" placeholder="Nuovo Todo">
+                    <button @click="aggiungiTodo" class="pointer">Aggiungi</button>
+                </div>
+                <!-- fine aggiungi todo -->
+
+                <!-- inizio lista todo -->
+                <div class="todo_cont">
+
+                    <!-- inizio lista todo -->
+                    <!-- v-if per visualizzarla solo se è presente almeno 1 elemento nell'array todos -->
+                    <ul v-if="todos.length > 0" class="lista_todo">
+
+                        <!-- todo singola -->
+                        <li v-for="(todo, index) in todos">
+
+                            <!-- stampo l'elemento todo nella stringa todos in data -->
+                            {{todo}}
+                            
+                            <!-- x per cancellare con @click richiamando la funzione in methods -->
+                            <span @click="cancellaTodo(index)" class="cancella pointer"><i class="fas fa-times"></i></span>
+                            
+                            <!-- stella per indicare che è stata compiuta -->
+                            <!-- <span @click="" class="fatto pointer"><i class="fas fa-star"></i></span> -->
+                        
+                        </li>
+
+                    </ul>
+                    <!-- fine lista todo -->
+
+                    <!-- v-else (v-if sopra) per visualizzare il messaggio se non ci sta nessun elemento nell'array todos -->
+                    <div v-else class="no_lista">Non è presente nessun elemento nella lista</div>
+
+                </div>
+                <!-- fine lista todo -->
+
+            </div>
+            <!-- inizio contenitore root -->
+
+        </div>
+        <!-- fine vue js #root -->
+
+    </main>
+    <!-- FINE MAIN -->
+
+    <!-- INIZIO FOOTER -->
+    <footer>
+        <span><b>@pmattiab</b></span>
+        <img src="img/bool_logo.png" alt="boolean">
+        <span>todo list with</span>
+        <img src="img/vue_logo.png" alt="vue">
+    </footer>
+    <!-- FINE FOOTER -->
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/script.js"></script>   
+
+</body>
+</html>

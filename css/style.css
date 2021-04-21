@@ -1,0 +1,157 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    color: #001633;
+    background-color: #e9e9e9;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+/* titolo */
+h1 {
+    font-size: 49px;
+    display: inline-block;
+}
+
+.title img {
+    width: 300px;
+    vertical-align: top;
+    margin-right: 15px;
+}
+
+/* MAIN */
+main {
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* contenitore */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 50px 200px;
+}
+
+/* aggiungi todo */
+.agg_todo {
+    text-align: center;
+}
+
+.agg_todo input {
+    font-size: 15px;
+    min-width: 300px;
+    padding: 10px 20px;
+    border: 1px solid #001633;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.agg_todo button {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #001633;
+    padding: 10px 20px;
+    border: 1px solid #001633;
+    border-radius: 10px;
+}
+
+.agg_todo button:hover,
+.agg_todo input:hover,
+.agg_todo input:focus {
+    color: white;
+    background-color: #001633;
+    border: 1px solid white;
+}
+
+.agg_todo button:active {
+    transform: translate(1px, 2px);
+}
+
+/* contenitore todo */
+.todo_cont {
+    border-radius: 20px;
+    margin: 50px 0;
+}
+
+.lista_todo {
+    list-style: none;
+}
+
+.lista_todo li {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 50px;
+    margin-bottom: 5px;
+    background-color: #e9e9e9;
+}
+
+.lista_todo li:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.lista_todo li:last-child {
+    border-radius: 0 0 20px 20px;
+}
+
+.lista_todo li:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lista_todo li .cancella {
+    color: #999;
+    font-size: 30px;
+    float: right;
+    transform: translateY(-6px);
+}
+
+.lista_todo li .fatto {
+    color: #999;
+    font-size: 25px;
+    float: right;
+    margin-right: 15px;
+    transform: translateY(-4px);
+}
+
+.lista_todo li .cancella:hover,
+.lista_todo li .fatto:hover {
+    color: #001633;
+}
+
+.no_lista {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+footer img {
+    margin: 0 3px;
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+}
