@@ -30,9 +30,8 @@ h1 {
 }
 
 .title img {
-    width: 300px;
-    vertical-align: top;
-    margin-right: 15px;
+    width: 55px;
+    vertical-align: bottom;
 }
 
 /* MAIN */
@@ -101,6 +100,8 @@ main {
     padding: 20px 50px;
     margin-bottom: 5px;
     background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
 }
 
 .lista_todo li:first-child {
@@ -116,24 +117,51 @@ main {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
+.lista_todo li .banner_fatto {
+    font-size: 15px;
+    color: white;
+    background-color: seagreen;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.lista_todo li {
+    color: #999
+}
+
+.lista_todo li .todo_nome {
+    flex-grow: 1;
+    color: #001633;
+}
+
+.text_barrato {
+    text-decoration: line-through;
+}
+
 .lista_todo li .cancella {
-    color: #999;
-    font-size: 30px;
-    float: right;
-    transform: translateY(-6px);
+    font-size: 32px;
+}
+
+.lista_todo li .cancella:hover {
+    color: darkred;
 }
 
 .lista_todo li .fatto {
-    color: #999;
     font-size: 25px;
-    float: right;
-    margin-right: 15px;
-    transform: translateY(-4px);
+    margin: 0 15px;
 }
 
-.lista_todo li .cancella:hover,
 .lista_todo li .fatto:hover {
-    color: #001633;
+    color: seagreen;
+}
+
+.lista_todo li .green {
+    color: seagreen;
+}
+
+.lista_todo li .cancella:active,
+.lista_todo li .fatto:active {
+    transform: translate(2px, 2px);
 }
 
 .no_lista {

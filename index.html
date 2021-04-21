@@ -18,9 +18,9 @@
         <div class="title">
 
             <!-- logo -->
-            <img src="img/boolean_logo.png" alt="">
+            <img src="img/bool_logo.png" alt="logo">
 
-            <h1>Todo List</h1>
+            <h1>boolean todo list</h1>
         </div>
         <!-- fine titolo -->
 
@@ -54,13 +54,16 @@
                         <li v-for="(todo, index) in todos">
 
                             <!-- stampo l'elemento todo nella stringa todos in data -->
-                            {{todo}}
+                            <span class="todo_nome" :class="{text_barrato: todo.fatto}">{{todo.testo}}</span>
+
+                            <!-- banner verde visibile solo l'azione è stata compiuta -->
+                            <span class="banner_fatto" v-if="todo.fatto">Fatto</span>
+
+                            <!-- checked per indicare che è stata compiuta -->
+                            <span @click="todoFatto(todo)" class="fatto pointer" :class="{green: todo.fatto}"><i class="fas fa-check"></i></span>
                             
                             <!-- x per cancellare con @click richiamando la funzione in methods -->
                             <span @click="cancellaTodo(index)" class="cancella pointer"><i class="fas fa-times"></i></span>
-                            
-                            <!-- stella per indicare che è stata compiuta -->
-                            <!-- <span @click="" class="fatto pointer"><i class="fas fa-star"></i></span> -->
                         
                         </li>
 
